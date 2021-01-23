@@ -1,2 +1,2 @@
-x=(input("Please enter your name:"))
+x=(input("Please enter your name: "))
 print("Happy Birthday "+x+"!!!")

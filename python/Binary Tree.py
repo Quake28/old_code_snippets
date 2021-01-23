@@ -3,7 +3,7 @@ RANDOM GENERATOR (NO DUPLICATE DATA ALLOWED, that's why code is so much longer t
 """
 import random
 x=10
-#x=int(input("Enter no. of elements in Binary tree : ")) #-Input for variable length tree instead of fixed length for random no. generator
+#x=int(input("Enter no. of elements in Binary tree: ")) #-Input for variable length tree instead of fixed length for random no. generator
 binTree=[[0 for a in range (x)],[],[0 for b in range (x)]]
 match=False
 randcount=0#*
