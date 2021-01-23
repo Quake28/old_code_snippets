@@ -1,0 +1,47 @@
+Admittedly, my solution wouldn't work for negative integers, but it will extract all positive integers from input text containing integers. It makes use of numeric_only locale:
+
+int main() {
+int num;
+std::cin.imbue(std::­locale(std::locale()­, new numeric_only()));
+while ( std::cin >> num)
+std::cout << num << std::endl;
+return 0;
+}
+Input text:
+
+the format (-5) or (25) etc... some text.. and then.. 7987...78hjh.hhjg987­8
+Output integers:
+
+5
+25
+7987
+78
+9878
+The class numeric_only is defined as:
+
+struct numeric_only: std::ctype<char>
+{
+numeric_only(): std::ctype<char>(get­_table()) {}
+
+static std::ctype_base::mas­k const* get_table()
+{
+static std::vector<std::cty­pe_base::mask>
+rc(std::ctype<char>:­:table_size,std::cty­pe_base::space);
+
+std::fill(&rc['0'], &rc[':'], std::ctype_base::dig­it);
+return &rc[0];
+}
+};
+
+
+In C++11 there are some nice new convert functions from std::string to a number type.
+
+So instead of
+
+atoi( str.c_str() )
+you can use
+
+std::stoi( str )
+where str is your number as std::string.
+
+There are version for all flavours of numbers: long stol(string), float stof(string), double stod(string),..

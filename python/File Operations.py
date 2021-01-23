@@ -1,0 +1,10 @@
+a=input("Input filename :")
+a=a+".txt"
+f=open(a,'w')
+f=open(a,'r+')
+x=input("Input text to be written into the file :")
+f.write(x)
+f.seek(0,0)
+y=f.read()
+print(y)
+f.close()

@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1385316876 source:d:\my apps\line\main.c
+	<windows.h>
+	<gl/gl.h>
+

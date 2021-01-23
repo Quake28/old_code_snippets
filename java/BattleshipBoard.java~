@@ -1,0 +1,18 @@
+import java.util.* ;
+public class BattleshipBoard
+{
+    private void __init__ ()
+    {
+        player1Board = char [][]
+        player2Board = char [][]
+    }
+    public static void main (String[] args)
+    {
+        Battleship bs = new Battleship();
+        bs.battleshipBoard();
+    }
+    public void battleshipBoard ()
+    {
+        System.out.println("Hello World!");
+    }
+}

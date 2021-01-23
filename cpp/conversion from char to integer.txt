@@ -1,0 +1,13 @@
+#include<sstream>
+
+using namespace std;
+
+int main()
+{
+	stringstream str;
+
+	str<<"1";
+
+	Double x;
+	str>>x;
+}

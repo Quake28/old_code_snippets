@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1411048026 source:d:\my apps\initials2\initials2.cpp
+	<iostream>
+	<string>
+	<conio.h>
+
