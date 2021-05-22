@@ -1,0 +1,240 @@
+# 1. Sort an array RECURSIVELY using selection sort algorithm.
+# TASK 1
+def selection_recursive(array, unsorted=0):
+    if unsorted < len(array) - 1:
+        lowest = unsorted + min(array[unsorted:])
+        if lowest != unsorted:
+            temp = array[unsorted]
+            array[unsorted] = array[lowest]
+            array[lowest] = temp
+        selection_recursive(array, unsorted + 1)
+    return array
+
+
+def min(array, curr=1, lowest=0):
+    if curr < len(array):
+        if array[curr] < array[lowest]:
+            lowest = min(array, curr + 1, curr)
+        else:
+            lowest = min(array, curr + 1, lowest)
+    return lowest
+
+
+array1 = [8, 9, 0, 6, 7, 5, 3, 4, 1, 2]
+print(selection_recursive(array1))
+
+
+# 2. Sort an array RECURSIVELY using insertion sort algorithm.
+# TASK 2
+def insertion_recursive(array, count=1):
+    if count < len(array):
+        temp = array[count]
+        array, swap = insert(array, count)
+        array[swap] = temp
+        # print() # DEBUG
+        insertion_recursive(array, count + 1)
+
+    return array
+
+
+def insert(array, count, temp=None):
+    # print(array,count,array[count-1],temp) # DEBUG
+    temp2 = count
+    if temp == None:
+        temp = array[count]
+    if count > 0:
+        if array[count - 1] > temp:
+            array[count] = array[count - 1]
+            return insert(array, count - 1, temp)
+        else:
+            return array, temp2
+    else:
+        return array, temp2
+
+
+array2 = [8, 9, 0, 6, 7, 5, 3, 4, 1, 2]
+print(insertion_recursive(array2))
+
+# SINGLY LINKED NODE CLASS AND LIST GENERATOR
+class Node:
+    def __init__(self, value=None, next=None):
+        self.value = value
+        self.next = next
+
+    def __str__(self):
+        if self.next == None:
+            return str(self.value)
+        return str(self.value) + " " + self.next.__str__()
+
+
+def singlyLinked(array):
+    head = Node(array[0])
+    head1 = head
+    for a in array[1:]:
+        head1.next = Node(a)
+        head1 = head1.next
+    return head
+
+
+# 3. Sort a singly linked sequential list using bubble sort algorithm.
+# TASK 3
+def bubble_linked(head):
+    head1 = head
+    while True:
+        head2 = head
+        if head1.next == None:
+            break
+        while True:
+            if head2.next == None:
+                break
+            if head2.value > head2.next.value:
+                temp = head2.next.value
+                head2.next.value = head2.value
+                head2.value = temp
+            head2 = head2.next
+        head1 = head1.next
+    return head
+
+
+array3 = [8, 9, 0, 6, 7, 5, 3, 4, 1, 2]
+linkedlist3 = singlyLinked(array3)
+print(bubble_linked(linkedlist3))
+
+# 4. Sort a singly linked sequential list using selection sort algorithm.
+# TASK 4
+def selection_linked(head):
+    head1 = head
+    while True:
+        head2 = head1.next
+        min = head1
+        if head1.next == None:
+            break
+        while True:
+            if min.value > head2.value:
+                min = head2
+            if head2.next == None:
+                break
+            head2 = head2.next
+        temp = min.value
+        min.value = head1.value
+        head1.value = temp
+        head1 = head1.next
+    return head
+
+
+array4 = [8, 9, 0, 6, 7, 5, 3, 4, 1, 2]
+linkedlist4 = singlyLinked(array4)
+print(selection_linked(linkedlist4))
+
+# 5. Sort a DOUBLY linked sequential list using insertion sort algorithm.
+# TASK 5
+# DOUBLY LINKED NODE CLASS AND LIST GENERATOR
+class DoubleNode:
+    def __init__(self, value=None, next=None, prev=None):
+        self.value = value
+        self.next = next
+        self.prev = prev
+
+    def __str__(self):
+        if self.next == None:
+            return str(self.value)
+        return str(self.value) + " " + self.next.__str__()
+
+
+def doubleLinked(array):
+    head = DoubleNode(array[0])
+    head1 = head
+    for a in array[1:]:
+        head1.next = DoubleNode(a)
+        head1 = head1.next
+    head1 = head
+    while True:
+        if head1.next == None:
+            break
+        head1.next.prev = head1
+        head1 = head1.next
+    return head
+
+
+def reverse(head):
+    while True:
+        if head.next == None:
+            break
+        head = head.next
+    while True:
+        print(head.value)
+        if head.prev == None:
+            break
+        head = head.prev
+
+
+def insertion_linked(head):
+    head1 = head.next
+    while True:
+        head2 = head1
+        if head1 == None:
+            break
+        temp = head1.value
+        while True:
+            if head2.prev == None:
+                break
+            if head2.prev.value > temp:
+                head2.value = head2.prev.value
+            else:
+                break
+            head2 = head2.prev
+        head2.value = temp
+        head1 = head1.next
+    return head
+
+# reverse(linkedlist1)
+array5 = [8, 9, 0, 6, 7, 5, 3, 4, 1, 2]
+linkedlist5 = doubleLinked(array5)
+print(insertion_linked(linkedlist5))
+
+# 6. Implement binary search algorithm RECURSIVELY.
+# TASK 6
+def binary_recursive(array, item, start=0, end=0, count=0):
+    if count == 0:
+        end = len(array)
+    x = (end - start) / 2 - 1
+    if x % 1 != 0:
+        x += 0.5
+    x = int(x)
+    if x < 0:
+        return "{} was not found in the array".format(item)
+    elif array[start + x] == item:
+        return "{} found in location {}".format(item, start + x)
+    elif array[start + x] < item:
+        start += x + 1
+    elif array[start + x] > item:
+        end -= x + 1
+    return binary_recursive(array, item, start, end, 1)
+
+
+array6 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+print(binary_recursive(array6, 9))
+
+# 7. Implement a recursive algorithm to find the n-th Fibonacci number using memoization.
+# TASK 7
+
+memoization101 = [1, 1, 2, 3, 5, 8]
+
+
+def fibonacci(n, prev=0, curr=1):
+    if prev == 0 and curr == 1:
+        if n <= len(memoization101):
+            return memoization101[n - 1]
+        elif n > len(memoization101):
+            return fibonacci(
+                n - len(memoization101), memoization101[-2], memoization101[-1]
+            )
+    elif n != 0:
+        memoization101.append(prev + curr)
+        return fibonacci(n - 1, curr, memoization101[-1])
+    else:
+        return curr
+
+
+print(fibonacci(11))
+print(memoization101)
