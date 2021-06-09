@@ -1,0 +1,9 @@
+Tiger Something1 10 SomethingAgain1 Cage1
+Lion Something3 30 SomethingAgain3 Cage3
+Dog Something4 40 SomethingAgain4 Cage4
+Hyenas Something5 50 SomethingAgain5 Cage5
+Fox Something6 60 SomethingAgain6 Cage6
+Zebra Something7 70 SomethingAgain7 Cage7
+Giraffe Something8 80 SomethingAgain8 Cage8
+Deer Something9 90 SomethingAgain9 Cage9
+Hippopotamus Something10 100 SomethingAgain10 Cage10

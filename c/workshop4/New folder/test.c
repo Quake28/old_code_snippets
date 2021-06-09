@@ -135,19 +135,18 @@ int load_file(Robot *Robot_info)
     //for (i = 0; i < 10; i++)
     while (1 == 1)
     {
-
-        i++;
-        int x = 0;
-        char a[20];
+        int x;
         int b;
         float c;
         float d;
         float e = 0.0;
-        fscanf(fileR, "%d %s %d %f %f %f\n", &x, a, &b, &c, &d, &e);
-        newRobot(Robot_info, x - 1, a, b, c, d, e);
+        char a[20];
+        fscanf(fileR, "%d %s %d %f %f %f", &x, a, &b, &c, &d, &e);
         if ((feof(fileR)) || (i == 10)) //remove ==10 to remove limit
             break;
-        //printf("%d %s %d %.2f %.2f\n", x, a, b, c, d);
+		newRobot(Robot_info, x - 1, a, b, c, d, e);
+        printf("%d %s %d %.2f %.2f %.2f\n", x, a, b, c, d,e);
+        i++;
     }
     fclose(fileR);
     return i;
