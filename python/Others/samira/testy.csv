@@ -1,0 +1,28 @@
+,Variable Name,Units,Description
+0,TIME,"yyyy-MM-dd""T""HH:mm:ss.fffzzz",Time
+1,DHT001 TEMP PCB MEAN,degC,Downhole temperature (near bit)
+2,TQABAV,kN.m,Averaged topside torque on drill string
+3,ISLS,unitless,In-slip signal (very low sampling rate)
+4,HKLDAV,kN,Averaged topside hook load
+5,RT_ROPA_T,m/h,Rate of Penetration (ROP)
+6,RT_RPMS_T,RPM,Drill string rotation (RPM)
+7,RT_DEPTH_HOLE_T,m,Depth of hole
+8,RT_DEPTH_BIT_T,m,Depth of bit
+9,RT_APRES_T,bar,Annular pressure near bit
+10,RT_ECD_T,g/cm3,Annular ECD near bit
+11,RT_MTOA_T,degC,Mud temperature out of hole
+12,RT_MTIA_T,degC,Mud temperature into hole
+13,RT_MDOA_T,kg/m3,Mud density out
+14,RT_MDIA_T,kg/m3,Mud density in
+15,RT_MFOA_T,L/min,Mud flow rate out
+16,RT_MFIA_T,L/min,Mud flow rate in
+17,ASMECD1-T,g/cm3,ECD at ASM sensor 1
+18,ASMPAM3-T,bar,Pressure at ASM sensor 3
+19,ASMDEP3-T,m,Depth at ASM sensor 3
+20,ASMPAM2-T,bar,Pressure at ASM sensor 2
+21,ASMDEP2-T,m,Depth at ASM sensor 2
+22,ASMPAM1-T,bar,Pressure at ASM sensor 1
+23,ASMDEP1-T,m,Depth at ASM sensor 1
+24,RT_PIT_GAIN_LOSS_T,m3,Pit gain/loss
+25,ASMECD2-T,g/cm3,ECD at ASM sensor 2
+26,SPPAVG,bar,SPP
