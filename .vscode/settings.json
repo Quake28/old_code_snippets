@@ -10,5 +10,9 @@
         "array": "c",
         "*.tcc": "c",
         "ostream": "cpp"
-    }
+    },
+    "java.project.sourcePaths": [
+        "java/battleshipBoardGame",
+        "java/nishorgo/q1"
+    ]
 }

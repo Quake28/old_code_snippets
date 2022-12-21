@@ -1,0 +1,17 @@
+#!/bin/bash
+touch 19241007_1.txt 19241007_2.txt 19241007_3.txt 19241007_4.txt
+mkdir  ShihabSharar1 ShihabSharar2
+mv 19241007_1.txt  19241007_2.txt  19241007_3.txt ShihabSharar1
+cp ShihabSharar1/19241007_1.txt ShihabSharar1/19241007_2.txt ShihabSharar2
+mkdir ShihabSharar3
+cp ShihabSharar1 ShihabSharar3 -r
+cd ShihabSharar3
+ls -l
+chmod go----
+chmod go+r-x
+ls -l
+
+cd ..
+ls -al
+mv ShihabSharar3 /
+rm -r *

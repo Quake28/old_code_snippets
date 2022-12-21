@@ -27,7 +27,7 @@ print("Total Books: ", Author.totalBooks)
 print("=================================")
 a1 = Author()
 print("=================================")
-a1.addBook("Ice", "Science Fiction")z
+a1.addBook("Ice", "Science Fiction")
 print("=================================")
 a1.setName("Anna Kavan")
 a1.addBook("Ice", "Science Fiction")

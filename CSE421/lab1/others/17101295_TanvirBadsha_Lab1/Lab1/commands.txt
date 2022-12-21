@@ -1,0 +1,69 @@
+Task2: Erase and Reload the Routers:
+R1:
+	enable
+	erase startup-config
+	reload
+R2:
+	enable
+	erase startup-config
+	reload
+Task3:
+R1:
+	enable
+	configure terminal
+	enable
+	configure terminal
+	hostname R1
+	no ip domain-lookup
+	enable secret class
+	line console 0
+	password cisco
+	login
+	exit
+	line vty 0 4
+	passowrd cisco
+	login
+	exit
+	interface fastethernet 0/0
+	ip address 192.168.1.1 255.255.255.0
+	no shutdown
+	interface serial 0/0/0
+	ip address 192.168.2.1 255.255.255.0
+	clock rate 64000
+	no shutdown
+	end
+	copy running-config startup-config
+Task4:
+R2:
+	enable
+	configure terminal
+	enable
+	configure terminal
+	hostname R1
+	no ip domain-lookup
+	enable secret class
+	line console 0
+	password cisco
+	login
+	exit
+	line vty 0 4
+	passowrd cisco
+	login
+	exit
+	interface serial 0/0/0
+	ip address 192.168.2.2 255.255.255.0
+	no shutdown
+	interface fastethernet 0/0
+	ip address 192.168.3.1 255.255.255.0
+	no shutdown
+	end
+	copy running-config startup-config
+Task6:
+	show ip route (R1)
+	show ip route (R2)
+	show ip interface brief (R1)
+	show ip interface brief (R2)
+	ping 192.168.2.2 (from R1)
+	ping 192.168.2.1 (from R2)
+	
+	

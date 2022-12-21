@@ -1,0 +1,16 @@
+Bind = 172.217.0.0 / 21
+Fracture = 172.217.8.0 / 21
+Ascent = 172.217.16.0 / 22
+Icebox = 172.217.20.0 / 22
+Breeze = 172.217.24.0 / 22
+Haven = 172.217.28.0 / 22
+
+
+
+21 = 255.255.248.0 
+22 = 255.255.252.0
+
+
+
+Command for saving data -
+copy running-config startup-config
